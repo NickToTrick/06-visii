@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>magnifying-glass</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Visii-Home-Styled-with-Photos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-720.000000, -237.000000)">
+        <g id="2" fill="#2E2C56" stroke="#2E2C56" stroke-width="3">
+            <g id="Hero" transform="translate(7.000000, 82.000000)">
+                <path d="M737.142857,176.485714 L735.725714,176.485714 L735.194286,175.954286 C736.965714,174.005714 738.028571,171.348571 738.028571,168.514286 C738.028571,162.137143 732.891429,157 726.514286,157 C720.137143,157 715,162.137143 715,168.514286 C715,174.891429 720.137143,180.028571 726.514286,180.028571 C729.348571,180.028571 732.005714,178.965714 733.954286,177.194286 L734.485714,177.725714 L734.485714,179.142857 L743.342857,188 L746,185.342857 L737.142857,176.485714 L737.142857,176.485714 Z M726.5,177 C721.777778,177 718,173.222222 718,168.5 C718,163.777778 721.777778,160 726.5,160 C731.222222,160 735,163.777778 735,168.5 C735,173.222222 731.222222,177 726.5,177 L726.5,177 Z" id="magnifying-glass"></path>
+            </g>
+        </g>
+    </g>
+</svg>

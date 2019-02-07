@@ -1,0 +1,48 @@
+@import "icomoon-variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?kv7z5n');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?kv7z5n#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?kv7z5n') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?kv7z5n') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?kv7z5n#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.icon-facebook {
+  &:before {
+    content: unicode($icon-facebook); 
+  }
+}
+.icon-twitter {
+  &:before {
+    content: unicode($icon-twitter); 
+  }
+}
+.icon-linkedin2 {
+  &:before {
+    content: unicode($icon-linkedin2); 
+  }
+}
+

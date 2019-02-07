@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://use.typekit.net/ccm6vnj.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700%7COpen+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Visii Collections</title>
+</head>
+<style>
+
+.collection-text {
+    overflow: hidden;
+}
+
+.carousel-showmanymoveone .carousel-item.active {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+
+.slider-text h2 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin: 30px auto;
+}
+
+.slider-text h2::after {
+    border-top: 2px solid #c7c7c7;
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+}
+
+.itemslider h4 {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 10px auto 3px;
+}
+
+.itemslider h5 {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 3px auto 2px;
+}
+
+.itemslider h6 {
+    font-weight: 300;
+    ;
+    font-size: 10px;
+    margin: 2px auto 5px;
+}
+
+.badge {
+    background: #b20c0c;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 31px;
+    font-weight: 300;
+    font-size: 14px;
+    border: 2px solid #FFF;
+    box-shadow: 0 0 0 1px #b20c0c;
+    top: 5px;
+    right: 25%;
+}
+
+.slider-control img {
+    margin: 0 auto;
+    padding-top: 60%;
+}
+.carousel-showmanymoveone .carousel-control-prev,
+.carousel-showmanymoveone .carousel-control-next {
+    align-items: flex-start;
+}
+
+span.item-buy {
+    padding: 0 !important;
+}
+.cta-buy button.item-buy {
+    display: block;
+    border: none;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+    background-color: #252525;
+    margin: 0 auto;
+    min-width: 60px;
+    height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.itemslider h5 {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px auto;
+}
+
+@media screen and (max-width: 992px) {
+    .slider-control img {
+        margin: 0 auto;
+    }
+}
+
+.carousel-showmanymoveone {
+    padding: 0;
+}
+
+.carousel-showmanymoveone .carousel-inner {
+    min-height: 150px;
+}
+
+.carousel-showmanymoveone .carousel-control {
+    width: 4%;
+    background-image: none;
+}
+
+.carousel-showmanymoveone .carousel-control.left {
+    margin-left: 5px;
+}
+
+.carousel-showmanymoveone .carousel-control.right {
+    margin-right: 5px;
+}
+
+.carousel-showmanymoveone .cloneditem-3,
+.carousel-showmanymoveone .cloneditem-4,
+.carousel-showmanymoveone .cloneditem-5 {
+    display: none;
+}
+
+.carousel-inner .item.left.active {
+    transform: translateX(-33%);
+}
+
+.carousel-inner .item.right.active {
+    transform: translateX(33%);
+}
+
+.carousel-inner .item.next {
+    transform: translateX(33%)
+}
+
+.carousel-inner .item.prev {
+    transform: translateX(-33%)
+}
+
+.collection-image {
+    max-height: 150px;
+    width: auto;
+}
+
+@media all and (min-width: 768px) {
+    .carousel-showmanymoveone .carousel-inner>.active.left,
+    .carousel-showmanymoveone .carousel-inner>.prev {
+        left: -50%;
+    }
+    .carousel-showmanymoveone .carousel-inner>.active.right,
+    .carousel-showmanymoveone .carousel-inner>.next {
+        left: 50%;
+    }
+    .carousel-showmanymoveone .carousel-inner>.left,
+    .carousel-showmanymoveone .carousel-inner>.prev.right,
+    .carousel-showmanymoveone .carousel-inner>.active {
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+        display: block;
+    }
+}
+
+@media all and (min-width: 768px) and (transform-3d),
+all and (min-width: 768px) and (-webkit-transform-3d) {
+    .carousel-showmanymoveone .carousel-inner>.item.active.right,
+    .carousel-showmanymoveone .carousel-inner>.item.next {
+        -webkit-transform: translate3d(25%, 0, 0);
+        transform: translate3d(25%, 0, 0);
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner>.item.active.left,
+    .carousel-showmanymoveone .carousel-inner>.item.prev {
+        -webkit-transform: translate3d(-25%, 0, 0);
+        transform: translate3d(-25%, 0, 0);
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner>.item.left,
+    .carousel-showmanymoveone .carousel-inner>.item.prev.right,
+    .carousel-showmanymoveone .carousel-inner>.item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        left: 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .carousel-showmanymoveone .carousel-inner>.active.left,
+    .carousel-showmanymoveone .carousel-inner>.prev {
+        left: -16.666%;
+    }
+    .carousel-showmanymoveone .carousel-inner>.active.right,
+    .carousel-showmanymoveone .carousel-inner>.next {
+        left: 16.666%;
+    }
+    .carousel-showmanymoveone .carousel-inner>.left,
+    .carousel-showmanymoveone .carousel-inner>.prev.right,
+    .carousel-showmanymoveone .carousel-inner>.active {
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner .cloneditem-4,
+    .carousel-showmanymoveone .carousel-inner .cloneditem-5 {
+        display: block;
+    }
+    .collection-image {
+        max-height: 100%;
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 992px) and (transform-3d),
+all and (min-width: 992px) and (-webkit-transform-3d) {
+    .carousel-showmanymoveone .carousel-inner>.item.active.right,
+    .carousel-showmanymoveone .carousel-inner>.item.next {
+        -webkit-transform: translate3d(16.666%, 0, 0);
+        transform: translate3d(16.666%, 0, 0);
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner>.item.active.left,
+    .carousel-showmanymoveone .carousel-inner>.item.prev {
+        -webkit-transform: translate3d(-16.666%, 0, 0);
+        transform: translate3d(-16.666%, 0, 0);
+        left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner>.item.left,
+    .carousel-showmanymoveone .carousel-inner>.item.prev.right,
+    .carousel-showmanymoveone .carousel-inner>.item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        left: 0;
+    }
+}
+
+</style>
+
+<body>
+    <div class="body-wrapper collections-page">
+        <div id="wrapper">
+            <header id="header">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container align-items-lg-stretch container-lg-fluid">
+                        <a class="navbar-brand" href="#"><img src="images/logo.svg" width="75" alt="Visii"></a>
+                        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end align-items-center flex-wrap" id="navbarNav">
+                            <ul class="navbar-nav navbar-dark">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Why Visual Search</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="btn-holder">
+                                <a href="#" class="btn">Request Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section class="collections-section">
+                    <div class="container">
+                        <div class="holder">
+                            <span class="title">Visii collections</span>
+                            <div class="img-block"><img src="images/collections-icon.png" srcset="images/collections-icon@2x.png 2x" width="140" alt=""></div>
+                            <h2>Curation on-the-fly with automated visually relevant suggestions.</h2>
+                            <div class="text-block">
+                                <p>Extend existing collections, looks and visual merchandising based on products your customers like.</p>
+                            </div>
+                            <a href="#" class="btn btn-emphasis">Try Collections</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="alternatives-section">
+                    <div class="container">
+                        <div class="holder">
+                            <div class="img-block">
+                                <img src="images/alternatives-img-2.png" srcset="images/alternatives-img-2@2x.png 2x" width="400" alt="">
+                                <img class="add-img" src="images/alternatives-img-2.svg" width="242" alt="">
+                            </div>
+                            <div class="text-block">
+                                <p>Visii Collections enhances your curated groups of products by extending them with automatically generated suggestions that match their style.</p>
+                                <p>On average our customers save 80 hours per month of manual merchandising tasks and can double their SKU's without additional staff.</p>
+                                <p>Typical applications include: automated visual merchandising, 'Shop The Look' functionality and extending customers' favourites or wishlists with many more targeted and personalised suggestions.</p>
+                                <div class="block-count-up">
+                                    <ul class="count-up-list">
+                                        <li class="item" data-count-from="0" data-count-to="52" data-count-type="0" data-count-duration="2.5" data-count-option='{"useEasing": "true", "useGrouping": "true", "separator": ".", "decimal": ".", "prefix": "", "suffix": "x"}'>
+                                            <div class="inner-holder">
+                                                <div class="icon-block"><img src="images/count-icon-3.svg" width="40" alt=""></div>
+                                                <span class="count-up-digit" id='count-up-digit-0'></span>
+                                                <span class="count-text">faster</span>
+                                            </div>
+                                        </li>
+                                        <li class="item" data-count-from="0" data-count-to="99" data-count-type="0" data-count-duration="2.5" data-count-option='{"useEasing": "true", "useGrouping": "true", "separator": ".", "decimal": ".", "prefix": "", "suffix": "x"}'>
+                                            <div class="inner-holder">
+                                                <div class="icon-block"><img src="images/count-icon-2.svg" width="25" alt=""></div>
+                                                <span class="count-up-digit" id='count-up-digit-1'></span>
+                                                <span class="count-text">more scalable</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="how-section">
+                    <div class="container">
+                        <div class="holder">
+                            <h2>How Collections Works</h2>
+                            <ul>
+                                <li>
+                                    <div class="img-block"><img src="images/how-img-3.png" srcset="images/how-img-3@2x.png 2x" width="290" alt=""></div>
+                                    <h3>Stand-alone WebApp</h3>
+                                    <p>Showcase the best sellers and use Collections to create more.</p>
+                                    <p>Ensure all your products become best sellers by giving them a chance. Collections will find entire outfits that match the products you want to stand out.</p>
+                                    <p>Our WebApp is the perfect stand-alone landing page from mailing or social media campaigns as it offers immediate personalisation for your customers.</p>
+                                </li>
+                                <li>
+                                    <div class="img-block"><img src="images/how-img-4.png" srcset="images/how-img-4@2x.png 2x" width="182" alt=""></div>
+                                    <h3>Automatically Curated Lists</h3>
+                                    <p>If a customer still hasn't found the right item, let Collections guide them.</p>
+                                    <p>Leverage your images to find related products rather than hand selecting them yourself. Product pages will always present highly relevant and up-to-date suggestions for your customers.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="try-section">
+                    <div class="container">
+                        <div class="heading-holder">
+                            <h2>Try Collections</h2>
+                            <p>See how Collections can make visual merchandising a breeze. Selecting products that make up a "look", you can automatically generate suggestions based on the multiple pieces.</p>
+                        </div>
+                        <div class="page-block">
+                            <div class="top-row">
+                                <span class="circles">
+										<span></span>
+                                </span>
+                            </div>
+                            <div class="heading"><span class="logo-text"><img src="images/logo.svg" width="68" height="36" alt="">collections</span></div>
+                            <div class="block app-header">
+                                <div class="container">
+                                    <div class="row raised">
+                                        <div class="window m-b-sm">
+                                            <div class="top-bar">
+                                                <div class="circle"></div>
+                                                <div class="circle"></div>
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="fill ">
+                                                <div class="visii-container collections-demo cta-buy">
+                                                    <div class="col-sm-12 p-x-0">
+                                                        <div class="row m-t-lg ">
+                                                            <div class="container-fluid p-b-md">
+                                                                <div class="row slider-text">
+                                                                    <div class="col-md-3">
+                                                                        <img src="https://www.visii.com/img/solutions/collections-vintage.jpg" class="img-responsive collection-image center-block" />
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row">
+                                                                            <div class="collection-text col-md-9">
+                                                                                <h2 class="text-uppercase">vintage COLLECTION</h2>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="carousel carousel-showmanymoveone slide itemslider" id="itemslider-vintage">
+                                                                                    <div class="carousel-inner">
+                                                                                        <div class="carousel-item active">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-1.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">5</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-2.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">10</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-3.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">15</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-4.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">20</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-5.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">25</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/vintage-recommendation-6.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">30</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slider-control">
+                                                                                        <a class="carousel-control-prev carousel-control" href="#itemslider-vintage" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive"></a>
+                                                                                        <a class="carousel-control-next carousel-control" href="#itemslider-vintage" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="container-fluid p-b-md">
+                                                                <div class="row slider-text">
+                                                                    <div class="col-md-3">
+                                                                        <img src="https://www.visii.com/img/solutions/collections-denim.jpg" class="img-responsive collection-image center-block" />
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row">
+                                                                            <div class="collection-text col-md-9">
+                                                                                <h2 class="text-uppercase">denim COLLECTION</h2>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="carousel carousel-showmanymoveone slide itemslider" id="itemslider-denim">
+                                                                                    <div class="carousel-inner">
+                                                                                        <div class="carousel-item active">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-1.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">5</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-2.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">10</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-3.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">15</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-4.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">20</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-5.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">25</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="carousel-item">
+                                                                                            <div class="col-4 col-sm-3 col-md-2 text-center">
+                                                                                                <a data-toggle="modal" data-target="#contactModal" href="#"><img src="https://www.visii.com/img/solutions/denim-recommendation-6.jpg" class="img-responsive center-block"></a>
+                                                                                                <h4>Collection Item</h4>
+                                                                                                <h5 class="m-b-sm">
+										<span class="icon icon-credit item-buy" aria-hidden="true"></span>
+										<a class="item-subtitle" data-toggle="modal" data-target="#contactModal" href="#" itemprop="url">30</a>
+									</h5>
+                                                                                                <button data-toggle="modal" data-target="#contactModal" type="button" class="btn-primary btn-xs item-buy text-center"><span>Buy</span></button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slider-control">
+                                                                                        <a class="carousel-control-prev carousel-control" href="#itemslider-denim" role="button" data-slide="prev"><img src="https://s12.postimg.org/uj3ffq90d/arrow_left.png" alt="Left" class="img-responsive"></a>
+                                                                                        <a class="carousel-control-next carousel-control" href="#itemslider-denim" role="button" data-slide="next"><img src="https://s12.postimg.org/djuh0gxst/arrow_right.png" alt="Right" class="img-responsive"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="e-comerce-block">
+                    <div class="contaienr">
+                        <div class="holder">
+                            <h2 class="text">See how Visii can upgrade your e-commerce experience</h2>
+                            <a href="#" class="btn btn-emphasis">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-top-row">
+                    <div class="logo"><a href="#"><img src="images/logo.svg" alt="visii"></a></div>
+                    <ul>
+                        <li>
+                            <h3>Solutions</h3>
+                            <ul>
+                                <li><a href="#">Collections</a></li>
+                                <li><a href="#">Explore</a></li>
+                                <li><a href="#">Similar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Follow</h3>
+                            <ul>
+                                <li><a href="#" target="_blank">Linkedin</a></li>
+                                <li><a href="#" target="_blank">Twitter</a></li>
+                                <li><a href="#" target="_blank">Instagram</a></li>
+                                <li><a href="#" target="_blank">Facebook</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-row">
+                    <div class="holder">
+                        <span class="copyright">Copyright © 2018 Dream It Get it Limited.</span>
+                        <a href="mailto:hello@visii.com">hello@visii.com</a>
+                    </div>
+                    <div class="holder">
+                        <a href="#" class="print">Small Print</a>
+                        <a href="#" class="privacy">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.js"></script>
+    <script src="js/countUp.min.js"></script>
+    <script src="js/jquery.main.js"></script>
+    <script src="//cdn.trackduck.com/toolbar/prod/td.js" async data-trackduck-id="5ab4ccaf8c44ffa149930b3a"></script>
+</body>
+
+</html>

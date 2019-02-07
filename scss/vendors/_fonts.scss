@@ -1,0 +1,9 @@
+@import '../base/mixins';
+
+@include font-face (EuclidSquare, EuclidSquare-Light, 300, normal);
+@include font-face (EuclidSquare, EuclidSquare-Regular, 400, normal);
+@include font-face (EuclidSquare, EuclidSquare-Medium, 500, normal);
+@include font-face (EuclidSquare, EuclidSquare-Semibold, 600, normal);
+@include font-face (EuclidSquare, EuclidSquare-Bold, 700, normal);
+@include font-face (LucidaGrande, lucida_grande_bold, 700, normal);
+@include font-face (LucidaGrande, lucidagrande, 400, normal);

@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://use.typekit.net/ccm6vnj.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700%7COpen+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Visii Explore</title>
+    <style>
+    /* WebApp */
+
+    .recommended-products {
+        width: 200px;
+        color: #5E6B77;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        margin: auto;
+    }
+
+    .visii-wrapper .cta-button-bar {
+        position: absolute;
+        margin: auto;
+        padding: 0 0 0 5%;
+        width: 20%;
+        text-align: left;
+        z-index: 1;
+    }
+
+    .mu-selected.mu-img {
+        top: -10px !important;
+    }
+
+    .visii-container .media-units.metadata-selected .mu-img,
+    .visii-container .media-units.metadata-selected .mu-selected {
+        border-radius: 6px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .visii-container .mu-img img {
+        min-height: 60px;
+        padding: 10px 5px;
+    }
+
+    .visii-container .media-units.metadata-selected .mu-selected {
+        box-sizing: border-box;
+        padding: 10px 10px 0;
+    }
+
+    .visii-container .more-like-this {
+        display: none;
+        height: 11px;
+        width: 50%;
+        margin: auto;
+        color: $brand-col;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 11px;
+        text-align: center;
+    }
+
+    .visii-container .visii-wrapper .media-units.metadata-selected.updated .mu-img:not(.mu-selected):hover img.lazyloaded {
+        opacity: 1;
+        width: 20vh;
+        padding: 5px 0;
+        margin-left: -5px;
+    }
+
+    .visii-container .visii-wrapper .media-units.metadata-selected.updated .mu-img:not(.mu-selected):hover {
+        border: 2px solid rgba(0, 86, 209, 0.3);
+        margin: -20px;
+        width: 20vh !important;
+        z-index: 99;
+        padding-bottom: 10px;
+    }
+
+    .visii-container .visii-wrapper .media-units.metadata-selected.updated .mu-img:not(.mu-selected):hover .more-like-this {
+        display: block;
+    }
+
+    .visii-container .metadata-selected.zoom-selected .selected-overlay img {
+        max-width: 100%;
+        height: inherit;
+    }
+
+    .media-units .meta-data {
+        padding-top: 5px;
+    }
+
+    .metadata-selected.zoom-selected .selected-overlay .meta-data {
+        display: block;
+    }
+
+    .metadata-selected.zoom-selected .selected-overlay .meta-data h2 {
+        white-space: normal;
+        overflow: auto;
+    }
+
+    .cta-button-bar .label {
+        color: $brand-col;
+    }
+
+    .cta-button-bar .cta-button {
+        width: 40px;
+    }
+
+    .cta-button-bar .cta-svg {
+        background-color: $brand-col;
+    }
+
+    .cta-button-bar .visii-pop-up {
+        border-color: $brand-col;
+    }
+
+    .cta-button-bar .visii-pop-up:before {
+        border-bottom-color: $brand-col;
+    }
+
+    .app-block-intro img {
+        width: 0;
+        margin-bottom: 0;
+    }
+
+    .visii-container {
+        max-width: 1600px;
+        min-height: 385px;
+        margin: auto;
+        padding: 0 10px;
+    }
+
+    .in-visii-journey.visii-container {
+        background: none;
+    }
+
+    .visii-container .visii-wrapper {}
+
+    .block .visii-container .media-units {
+        min-height: 400px;
+        width: 100%;
+        padding: 0 10%;
+        z-index: 0;
+        margin-top: 10px;
+    }
+
+    .visii-container .visii-notifications {
+        height: 120px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .visii-container .visii-notifications p {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .in-visii-journey .media-units,
+    .media-units.updated,
+    .media-units.loaded {
+        transition: background-color 0.5s ease;
+        background-color: $light-white-col;
+    }
+
+    .visii-container .cta-button-bar {
+        position: absolute;
+    }
+
+    .visii-container .cta-button .label {
+        font-size: 0.5em;
+    }
+
+    .visii-container .cta-button .label {
+        font-size: 0.5em;
+    }
+
+    .visii-container .cta-button .label:hover {
+        color: $brand-col;
+    }
+
+    .visii-container .cta-button:hover,
+    .in-visii-journey.visii-container .cta-button[data-action="restart"]:hover {
+        opacity: 0.7;
+    }
+
+    .visii-container .cta-button[data-action="restart"]:hover {
+        opacity: 1;
+    }
+
+    .visii-container .cta-button[data-action="restart"] img {
+        background-color: #01347d;
+    }
+
+    .visii-container .cta-button[data-action="restart"] a:hover {
+        cursor: default;
+    }
+
+    .in-visii-journey.visii-container .cta-button[data-action="restart"] a:hover {
+        cursor: auto;
+    }
+
+    .in-visii-journey.visii-container .cta-button[data-action="restart"] img {
+        background-color: $brand-col;
+    }
+
+    .visii-container .cta-filters {
+        display: none;
+    }
+
+    .visii-container .media-units .selected-overlay {
+        position: absolute;
+    }
+
+    .visii-container .media-units .selected-overlay .block {
+        background: $light-white-col;
+    }
+
+    .media-units:not(.loading) .mu-img {
+        background-image: none;
+    }
+
+    .mu-img .meta-data {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .item-title.ellipsis a {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .mu-img .meta-data a,
+    .mu-img .meta-data a:hover {
+        color: #5E6B77;
+        text-decoration: none;
+    }
+
+    .visii-container h4 {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 17px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 80%;
+    }
+
+    .visii-container h5 {
+        height: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        margin: auto;
+    }
+
+    .item-buy {
+        display: inline-block;
+        color: #5E6B77;
+    }
+
+    .cta-buy button.item-buy {
+        display: block;
+        border: none;
+        border-radius: 21px;
+        background-color: #252525;
+        margin: 0 auto;
+        width: 50%;
+        height: 30px;
+    }
+
+    .cta-buy button.item-buy span {
+        width: 80px;
+        color: #FFFFFF;
+        font-size: 10px;
+        font-weight: 600;
+        vertical-align: middle;
+    }
+
+    .cta-buy a.item-buy {
+        text-decoration: none;
+    }
+
+    .visii-container .media-units.zoom-selected .selected-overlay .selected {
+        display: none;
+    }
+
+    .selected-overlay .add-visii {
+        background: $light-white-col;
+    }
+    /* ^^ WebApp ^^ */
+    </style>
+</head>
+
+<body>
+    <div class="body-wrapper explore-page">
+        <div id="wrapper">
+            <header id="header">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container align-items-lg-stretch container-lg-fluid">
+                        <a class="navbar-brand" href="#"><img src="images/logo.svg" width="75" alt="Visii"></a>
+                        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end align-items-center flex-wrap" id="navbarNav">
+                            <ul class="navbar-nav navbar-dark">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Why Visual Search</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                        <li><a class="dropdown-item dropdown-toggle" href="#">Link 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Inner Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Inner Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="btn-holder">
+                                <a href="#" class="btn">Request Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section class="explore-section">
+                    <div class="container">
+                        <div class="holder">
+                            <span class="title">Visii explore</span>
+                            <div class="img-block"><img src="images/explore-icon.png" srcset="images/explore-icon@2x.png 2x" width="139" alt=""></div>
+                            <h2>Increase conversions with real-time personalisations.</h2>
+                            <div class="text-block">
+                                <p>Understand your customers' tastes and hone in on the products they want.</p>
+                            </div>
+                            <a href="#" class="btn btn-emphasis">Try Explore</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="alternatives-section">
+                    <div class="container">
+                        <div class="holder">
+                            <div class="text-block">
+                                <h2>Let Visii Explore take care of it</h2>
+                                <p>Don't rely entirely on search boxes, checkboxes or infinite scrolling to get your customers to your products.</p>
+                                <p>Visii Explore is our solution for product list display for browse and search. It is powered by our deep learning AI which allows us to narrow down the product result lists in real time – with every product selection a customer makes. This allows customers to easily focus on content they love even when browsing catalogues listing millions of products.</p>
+                            </div>
+                            <div class="block-count-up">
+                                <ul class="count-up-list">
+                                    <li class="item" data-count-from="0" data-count-to="30" data-count-type="0" data-count-duration="2.5" data-count-option='{"useEasing": "true", "useGrouping": "true", "separator": ".", "decimal": ".", "prefix": "", "suffix": "%"}'>
+                                        <div class="inner-holder">
+                                            <div class="icon-block"><img src="images/count-icon-4.svg" width="25" alt=""></div>
+                                            <span class="count-up-digit" id='count-up-digit-0'></span>
+                                            <span class="count-text">conversion increase</span>
+                                        </div>
+                                    </li>
+                                    <li class="item" data-count-from="0" data-count-to="33" data-count-type="0" data-count-duration="2.5" data-count-option='{"useEasing": "true", "useGrouping": "true", "separator": ".", "decimal": ".", "prefix": "", "suffix": "x"}'>
+                                        <div class="inner-holder">
+                                            <div class="icon-block"><img src="images/count-icon-5.svg" width="40" alt=""></div>
+                                            <span class="count-up-digit" id='count-up-digit-1'></span>
+                                            <span class="count-text">return on investment</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="how-section">
+                    <div class="container">
+                        <div class="holder">
+                            <h2>How Explore Works</h2>
+                            <ul>
+                                <li>
+                                    <div class="img-block"><img src="images/how-img-3.png" srcset="images/how-img-3@2x.png 2x" width="290" alt=""></div>
+                                    <h3>Stand-alone WebApp</h3>
+                                    <p>Send your customers to a highly personalised experience akin to a personal shopper.</p>
+                                    <p>Each choice they make will help Explore further hone in the recommendations, with minimal effort and the simplicity akin to interacting with a shopping assistant.</p>
+                                    <p>Our WebApp is the perfect stand-alone landing page from mailing or social media campaigns as it offers immediate personalisation for your customers.</p>
+                                </li>
+                                <li>
+                                    <div class="img-block"><img src="images/how-img-5.png" srcset="images/how-img-5@2x.png 2x" width="290" alt=""></div>
+                                    <h3>Search Pages</h3>
+                                    <p>Improve your existing search pages and get the right product in front of your customer before they bounce.</p>
+                                    <p>Don't expect your customers to scroll endlessly or go to page 5 to find their perfect item. By using Visii Explore on your existing search experience, you can add the most relevant results. Visii Explore works with filters you already have, meaning your customers can always find the right items in your catalogue.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="try-section">
+                    <div class="container">
+                        <div class="heading-holder">
+                            <h2>Try Explore</h2>
+                            <p>By selecting your favourite watch, Visii Explore will attempt to predict your interests and make increasingly relevant recommendations - tailored to you.</p>
+                        </div>
+                        <section class="watch-section">
+                            <div class="top-row">
+                                <span class="circles">
+										<span></span>
+                                </span>
+                            </div>
+                            <div class="heading"><span class="logo-text"><img src="images/logo.svg" width="68" height="36" alt="">explore</span></div>
+                            <span class="looking">I’m looking for <a href="#">watches </a>for <a href="#">men </a>at a budget of <a href="#">$300-$400</a>. </span>
+                                <div class="title">
+                                    <h3>Recommended products</h3>
+                                </div>
+                                <div class="block app-header">
+                                    <div class="container">
+                                        <div class="raised">
+                                            <div class="window m-b-sm">
+                                                <div class="fill">
+                                                    <div class="visii-container">
+                                                        <div class="col-sm-12 p-x-0">
+                                                            <div class="row m-t-lg">
+                                                                <div class="visii-wrapper hidden">
+                                                                    <div class="cta-button-bar horizontal">
+                                                                        <div data-action="rewind" class="cta-button">
+                                                                            <img class="cta-svg cta-back" /><a class="label">History</a>
+                                                                            <div id="historyItemsContainer" class="history-items history-items-horizontal visii-pop-up arrow-box" data-count="0"></div>
+                                                                        </div>
+                                                                        <div data-action="refresh" class="cta-button"><img class="cta-svg cta-refresh" /><a class="label">Refresh</a></div>
+                                                                        <div data-action="restart" class="cta-button"><img class="cta-svg cta-restart" /><a class="label">Restart</a></div>
+                                                                    </div>
+                                                                    <div class="visii-notifications"></div>
+                                                                    <div class="media-units">
+                                                                        <div class="grid"></div>
+                                                                        <div class="selected-overlay">
+                                                                            <div class="add-visii m-t-lg p-t-md">
+                                                                                <h1>You found it!</h1>
+                                                                                <p>Now you've experienced Visii Explore, get in touch to add it to your site.</p>
+                                                                                {{
+                                                                                < contact_button "Contact Us">}}
+                                                                            </div>
+                                                                            <div class="selected"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script type="text/javascript">
+                                var datasets = {
+                                    "faces": {
+                                        "title": "name",
+                                        "subtitle": "bio"
+                                    },
+                                    "watches2": {
+                                        "title": "titles",
+                                        "subtitle": "prices"
+                                    }
+                                };
+
+                                (function(window, document) {
+                                    function DemoWebapp() {
+                                        if (!window.addEventListener) {
+                                            return;
+                                        }
+
+                                        var self = this;
+
+                                        if (document.readyState === "interactive" || document.readyState === "complete") {
+                                            initWidget(self);
+                                        }
+
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                            initWidget(self);
+                                        });
+                                    }
+
+                                    function initWidget(visiiWidget) {
+                                        if (visiiWidget.initialized) {
+                                            return;
+                                        }
+
+                                        visiiWidget.initialized = true;
+                                        changeDataset();
+                                    }
+
+                                    function changeDataset() {
+                                        var dataset = getDataset();
+                                        createWidget(dataset);
+                                        setCTAType(dataset);
+                                    }
+
+                                    function setCTAType() {
+                                        var container = document.querySelector(".visii-container");
+                                        if (getDatasetParam("subtitle").indexOf("price") !== -1) {
+                                            container.classList.add("cta-buy");
+                                        }
+                                    }
+
+                                    function createWidget(dataset) {
+                                        var visiiWebApp = new WebApp({
+                                            client: dataset,
+                                            metadata: "category,product_page,sku," + getDatasetParam("title") + "," + getDatasetParam("subtitle"),
+                                            uiOpts: {
+                                                animate: false,
+                                                element: document.querySelector(".media-units"),
+                                                gutter: 20,
+                                                jaggedEdges: true,
+                                                maxColumnWidth: 275,
+                                                maxColumns: 9,
+                                                metadataTemplateHTML: mediaUnitMetadataTemplateHTML(),
+                                                minSelectedColumns: 2,
+                                                scrollAfterClickFunction: function() {},
+                                                templateFunction: templateMediaUnit,
+                                                templateResults: templateResults,
+                                                type: "MagneticClumping",
+                                                zoomOnSelected: true,
+                                            },
+                                            historyOpts: {
+                                                type: "popup",
+                                                element: document.querySelector("#historyItemsContainer"),
+                                                ctaElement: document.querySelector(".cta-button-bar")
+                                            },
+                                            filtersOpts: {},
+                                            additionalCookie: "__bxcid",
+                                            nFirstStepMediaUnits: 48
+                                        });
+                                        visiiWebApp.init();
+                                        document.querySelector(".visii-wrapper.hidden").className = "visii-wrapper";
+                                    }
+                                    window.DemoWebapp = DemoWebapp;
+                                })(window, document);
+
+                                function templateResults(data) {
+                                    var results = data.results;
+                                    for (var i = 0; i < results.length; i++) {
+                                        var metadata = results[i].metadata;
+                                        ["title", "subtitle"].forEach(function(x) {
+                                            metadata[x] = metadata[getDatasetParam(x)];
+                                        });
+                                    }
+                                }
+
+                                function getDataset() {
+                                    if (window.visii_dataset === undefined) {
+                                        var c = UrlQuery.get(window.location.href, "client");
+                                        window.visii_dataset = c || "watches2";
+                                    }
+                                    return window.visii_dataset;
+                                }
+
+                                function getDatasetParam(param) {
+                                    return datasets[getDataset()][param];
+                                }
+
+                                function changeDataset() {
+                                    var nextUrl = window.location.href.split("?")[0];
+                                    nextUrl += "?client=" + getNextDataset();
+                                    window.location.href = nextUrl;
+                                }
+
+
+                                function templateMediaUnit(elem, dataset) {
+                                    elem.querySelector(".item-title a").innerHTML = dataset["data-title"];
+                                    var subtitle = dataset["data-subtitle"];
+                                    if (subtitle == "nan") {
+                                        subtitle = "";
+                                    }
+                                    elem.querySelector(".item-subtitle").innerHTML = subtitle;
+                                }
+
+
+                                function mediaUnitMetadataTemplateHTML() {
+                                    var html = '';
+                                    html += '<div class="more-like-this">More like this</div>';
+                                    html += '<div class="meta-data list-art-image" itemscope itemtype="http://schema.org/ImageObject">';
+                                    html += '  <div class="list-art-meta">';
+                                    html += '    <h4 class="item-title left ellipsis" itemprop="name">';
+                                    html += '      <a onclick="javascript:showOverlay(event);"></a>';
+                                    html += '    </h4>';
+                                    html += '    <h5 class="m-b-sm">';
+                                    html += '      <span class="icon icon-credit item-buy" aria-hidden="true"></span>';
+                                    html += '      <a onclick="javascript:showOverlay(event);" class="item-subtitle" title="" itemprop="url"></a>';
+                                    html += '    </h5>';
+                                    html += '    <button onclick="javascript:showOverlay(event);" class="btn-primary item-buy"><span>Add to Cart</span></button>';
+                                    html += '  </div>';
+                                    html += '</div>';
+                                    return html;
+                                }
+
+                                function toDataset(result) {
+                                    return {
+                                        "data-title": result.metadata["title"],
+                                        "data-subtitle": result.metadata["subtitle"],
+                                        "data-image-height": result.metadata["image_height"],
+                                        "data-image-url": result.metadata["image_urls"],
+                                        "data-image-width": result.metadata["image_width"],
+                                        "data-journey-url": result.resultsURL,
+                                        "data-product-url": window.location.href,
+                                        "data-id": result.id,
+                                    };
+                                }
+
+                                function getProductDataset(element) {
+                                    var dataset = {
+                                        "data-subtitle": "",
+                                        "data-title": "",
+                                        "data-image-height": "",
+                                        "data-image-url": "",
+                                        "data-image-width": "",
+                                        "data-journey-url": "",
+                                        "data-product-url": "",
+                                        "data-id": ""
+                                    };
+                                    for (var i in dataset) {
+                                        dataset[i] = element.getAttribute(i);
+                                    }
+                                    return dataset;
+                                }
+
+                                function showOverlay(event) {
+                                    event.stopPropagation()
+                                    var element = document.querySelector(".media-units");
+                                    if (!hasClass(element, "zoom-selected")) {
+                                        addClassToElement(element, "zoom-selected");
+                                    } else {
+                                        removeClassFromElement(element, "zoom-selected");
+                                    }
+                                    return false;
+                                }
+
+                                var widget = new DemoWebapp();
+                                </script>
+                        </section>
+                    </div>
+                </section>
+                <div class="e-comerce-block">
+                    <div class="contaienr">
+                        <div class="holder">
+                            <h2 class="text">See how Visii can upgrade your e-commerce experience</h2>
+                            <a href="#" class="btn btn-emphasis">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-top-row">
+                    <div class="logo"><a href="#"><img src="images/logo.svg" alt="visii"></a></div>
+                    <ul>
+                        <li>
+                            <h3>Solutions</h3>
+                            <ul>
+                                <li><a href="#">Collections</a></li>
+                                <li><a href="#">Explore</a></li>
+                                <li><a href="#">Similar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Follow</h3>
+                            <ul>
+                                <li><a href="#" target="_blank">Linkedin</a></li>
+                                <li><a href="#" target="_blank">Twitter</a></li>
+                                <li><a href="#" target="_blank">Instagram</a></li>
+                                <li><a href="#" target="_blank">Facebook</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-row">
+                    <div class="holder">
+                        <span class="copyright">Copyright © 2018 Dream It Get it Limited.</span>
+                        <a href="mailto:hello@visii.com">hello@visii.com</a>
+                    </div>
+                    <div class="holder">
+                        <a href="#" class="print">Small Print</a>
+                        <a href="#" class="privacy">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.js"></script>
+    <script src="js/countUp.min.js"></script>
+    <script src="js/jquery.main.js"></script>
+    <script src="//cdn.trackduck.com/toolbar/prod/td.js" async data-trackduck-id="5ab4ccaf8c44ffa149930b3a"></script>
+
+    <script src="https://d3og7jzzujajeu.cloudfront.net/visii.com/webapp.js"></script>
+    <link href="https://d3og7jzzujajeu.cloudfront.net/visii.com/webapp.css" rel="stylesheet">
+</body>
+
+</html>

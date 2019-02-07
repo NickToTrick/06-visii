@@ -1,0 +1,39 @@
+
+// custom variables and override bootstrap variables
+
+// Colors
+
+// primary color
+$sky: #E4FAFF;
+// accent colors
+$coral: #EC695B;
+$royal: #56567F;
+// font colors
+$navy-strong: #232C59;
+$navy-medium: #4C4A7F;
+$navy-light: #8483AA;
+// background colors
+$bg-light: #FBFBFC;
+
+// Links
+$link-color: $coral;
+$link-hover-decoration: none;
+
+// Fonts
+$font-family-base: 'Open Sans', sans-serif;
+$EuclidSquare: "EuclidSquare", arial, sans-serif;
+$LucidaGrande: "LucidaGrande", arial, sans-serif;
+$Merriweather: "Merriweather", serif;
+$line-height-base: 1.375;
+$h1-font-size: 50px;
+$h2-font-size: 28px;
+$h3-font-size: 20px;
+$h4-font-size: 16px;
+$h5-font-size: 15px;
+$h6-font-size: 14px;
+
+// Grid
+$grid-gutter-width: 40px;
+
+//Modal
+$modal-backdrop-opacity: .7;
